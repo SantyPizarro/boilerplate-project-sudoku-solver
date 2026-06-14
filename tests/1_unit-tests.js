@@ -27,10 +27,20 @@ suite('Unit Tests', () => {
     done();
   });
 
-  test('Logic handles a valid row placement', (done) => {
-    assert.equal(solver.checkRowPlacement(puzzlesAndSolutions[0][0], 'A', '2', '3'), true);
-    done();
-  });
+test('Logic handles a valid row placement', (done) => {
+  assert.equal(solver.checkRowPlacement(puzzlesAndSolutions[0][0], 'A', '2', '3'), true);
+  done();
+});
+
+test('Logic handles an invalid row placement', (done) => {
+  assert.equal(solver.checkRowPlacement(puzzlesAndSolutions[0][0], 'A', '2', '1'), false);
+  done();
+});
+
+test('Logic handles a valid column placement', (done) => {
+  assert.equal(solver.checkColPlacement(puzzlesAndSolutions[0][0], 'A', '2', '3'), true);
+  done();
+});
 
 test('Logic handles an invalid column placement', (done) => {
   assert.equal(solver.checkColPlacement(puzzlesAndSolutions[0][0], 'A', '2', '2'), false);
